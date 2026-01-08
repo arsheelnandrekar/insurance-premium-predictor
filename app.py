@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import pickle as pkl
 # -----------------------------------
 # Page configuration
 # -----------------------------------
@@ -15,7 +15,7 @@ st.set_page_config(
 # -----------------------------------
 @st.cache_resource
 def load_model():
-    return st.load("insurance_premium_model.pkl")
+    return pkl.load("insurance_premium_model.pkl")
 
 model = load_model()
 
