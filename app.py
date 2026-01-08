@@ -15,7 +15,7 @@ st.set_page_config(
 # -----------------------------------
 @st.cache_resource
 def load_model():
-    return joblib.load("insurance_premium_model.pkl")
+    return st.load("insurance_premium_model.pkl")
 
 model = load_model()
 
