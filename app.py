@@ -13,11 +13,16 @@ st.set_page_config(
 # -----------------------------------
 # Load trained model (cached)
 # -----------------------------------
-@st.cache_resource
+import pickle as pkl
+
+@st.cache_data
 def load_model():
-    return pkl.load("insurance_premium_model.pkl","rb")
+    with open("insurance_premium_model.pkl", "rb") as f:
+        model = pkl.load(f)
+    return model
 
 model = load_model()
+)
 
 # -----------------------------------
 # App title & description
