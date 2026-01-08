@@ -15,7 +15,7 @@ st.set_page_config(
 # -----------------------------------
 @st.cache_resource
 def load_model():
-    return pkl.load("insurance_premium_model.pkl")
+    return pkl.load("insurance_premium_model.pkl","rb")
 
 model = load_model()
 
